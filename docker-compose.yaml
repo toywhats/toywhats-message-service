@@ -1,0 +1,13 @@
+version: '3'
+services:
+  toywhats-message-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: toywhats-message-service
+    ports:
+      - '3033:3033'
+    command: npm run dev
+    restart: "on-failure"
+    volumes:
+      - .:/src/app
